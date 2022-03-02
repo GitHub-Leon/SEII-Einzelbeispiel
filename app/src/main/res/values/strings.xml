@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">NetworkTest</string>
+    <string name="text_matrikelnummer">Gib deine Matrikelnummer ein</string>
+    <string name="text_matrikelnummer_input">Matrikelnummer</string>
+    <string name="server_response_text">Antwort vom Server</string>
+    <string name="server_response">TextView</string>
+    <string name="submit_button">ABSCHICKEN</string>
+</resources>
