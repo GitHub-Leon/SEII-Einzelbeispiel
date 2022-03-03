@@ -12,9 +12,15 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.seiieinzelbeispiel.network.NetworkClient;
+
+import java.io.BufferedReader;
+import java.io.DataOutputStream;
+import java.io.InputStreamReader;
+import java.net.Socket;
+
 
 public class MainActivity extends AppCompatActivity {
-    public static final String EXTRA_MESSAGE = "com.example.seiieinzelbeispiel.matrikelnummer";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,13 +29,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // Called when the user taps the "Abschicken" Button
-    public void sendMatrikelnummer(View view) {
-//        Intent intent = new Intent(this, DisplayMessageActivity.class);
-        TextView textView = (TextView) findViewById(R.id.matrikelnummer_input);
-        String matrikelnummer = textView.getText().toString();
-//        intent.putExtra(EXTRA_MESSAGE, matrikelnummer);
-//        startActivity(intent);
+    public void sendMatrikelnummer(View view) throws Exception{
+        EditText matrikelnummerInput = (EditText) findViewById(R.id.matrikelnummer_input);
+        TextView response_server_text = (TextView) findViewById(R.id.response_server);
+
+        NetworkClient networkClient = new NetworkClient("se2-isys.aau.at", 53212, matrikelnummerInput.getText().toString(), response_server_text);
+        networkClient.start();
 
     }
 
 }
+
