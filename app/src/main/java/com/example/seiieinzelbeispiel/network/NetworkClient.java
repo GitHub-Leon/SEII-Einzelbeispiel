@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.Socket;
 
-public class NetworkClient extends Thread {
+public class NetworkClient implements Runnable {
     private String host;
     private int port;
     private String matrikelnummer;
@@ -40,8 +40,9 @@ public class NetworkClient extends Thread {
 
             //response from server
             response = inFromServer.readLine();
-            response_server_text.append('\n' + response);
+            response_server_text.setText(response);
 
+            //closes socket
             clientSocket.close();
         } catch (IOException e) {
             e.printStackTrace();
