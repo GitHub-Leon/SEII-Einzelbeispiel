@@ -4,4 +4,5 @@
     <string name="text_matrikelnummer_input">Matrikelnummer</string>
     <string name="server_response_text">Antwort vom Server</string>
     <string name="submit_button">ABSCHICKEN</string>
+    <string name="berechne_button">BERECHNE</string>
 </resources>
